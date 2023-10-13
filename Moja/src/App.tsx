@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import ChakraLogin from './ChakraLogin'; // Import the ChakraLogin component
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(false);
@@ -21,6 +22,9 @@ function App() {
           <h1>Welcome to Moja!</h1>
         </div>
       )}
+
+      {/* Render ChakraLogin component */}
+      {showWelcome && <ChakraLogin />}
     </div>
   );
 }
