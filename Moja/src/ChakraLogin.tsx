@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Stack } from '@chakra-ui/react';
-import './ChakraLogin.css';
+import React from 'react';
+import { Stack, Input, InputGroup, InputLeftAddon } from '@chakra-ui/react';
 
 const ChakraLogin = () => {
-  const [fadeIn, setFadeIn] = useState(false);
-
-  useEffect(() => {
-    // Delay the fade-in effect by 1 second (adjust as needed)
-    const timer = setTimeout(() => {
-      setFadeIn(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Stack
-      className={`fade-in ${fadeIn ? 'fade-in-active' : ''}`}
       spacing={6}
       p={8}
       maxW={'lg'}
@@ -27,12 +14,19 @@ const ChakraLogin = () => {
       height={'300px'}
       align={'center'}
       justify={'center'}
-      position={'absolute'}
-      top={'50%'}
-      left={'50%'}
-      transform={'translate(-50%, -50%)'}
+      mt={'50px'}
+      ml={'20%'}
     >
-      {/* Your login content goes here */}
+      <Stack spacing={2}>
+        <InputGroup>
+          <InputLeftAddon children="First Name" />
+          <Input type="text" />
+        </InputGroup>
+        <InputGroup>
+          <InputLeftAddon children="Last Name" />
+          <Input type="text" />
+        </InputGroup>
+      </Stack>
     </Stack>
   );
 };
