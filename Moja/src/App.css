@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.sign-up-text {
+  font-size: 23px;
+  font-weight: 700; 
+  letter-spacing: 3.5px;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-top: -15px;
+}
+
+
