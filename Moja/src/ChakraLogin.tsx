@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Stack } from '@chakra-ui/react';
+import { Stack, Input, InputGroup, InputLeftElement, Button } from '@chakra-ui/react';
+import { FaUserAlt, FaLock } from 'react-icons/fa';
 import './ChakraLogin.css';
 
 const ChakraLogin = () => {
@@ -32,7 +33,19 @@ const ChakraLogin = () => {
       left={'50%'}
       transform={'translate(-50%, -50%)'}
     >
-      {/* Your login content goes here */}
+      <Stack direction="row" spacing={4} width="100%">
+        <InputGroup flex={1}>
+          <InputLeftElement pointerEvents="none" children={<FaUserAlt color="gray.300" />} />
+          <Input type="text" placeholder="Username" size="lg" />
+        </InputGroup>
+        <InputGroup flex={1}>
+          <InputLeftElement pointerEvents="none" children={<FaLock color="gray.300" />} />
+          <Input type="password" placeholder="Password" size="lg" />
+        </InputGroup>
+      </Stack>
+      <Button colorScheme="teal" width="full">
+        Login
+      </Button>
     </Stack>
   );
 };
