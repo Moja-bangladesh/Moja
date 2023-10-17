@@ -1,65 +1,40 @@
-import {
-  Flex,
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Checkbox,
-  Stack,
-  Button,
-  Heading,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react';
+import { Stack } from '@chakra-ui/react';
+import './ChakraLogin.css';
 
-export default function SimpleCard() {
+const ChakraLogin = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    // Delay the fade-in effect by 1 second (adjust as needed)
+    const timer = setTimeout(() => {
+      setFadeIn(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Flex
-      minH={'100vh'}
+    <Stack
+      className={`fade-in ${fadeIn ? 'fade-in-active' : ''}`}
+      spacing={6}
+      p={8}
+      maxW={'lg'}
+      borderWidth={1}
+      bg={'white'}
+      boxShadow={'xl'}
+      width={'400px'}
+      height={'300px'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Stack align={'center'}>
-          <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
-            to enjoy all of our cool <Text color={'blue.400'}>features</Text> ✌️
-          </Text>
-        </Stack>
-        <Box
-          rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
-          boxShadow={'lg'}
-          p={8}>
-          <Stack spacing={4}>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input type="password" />
-            </FormControl>
-            <Stack spacing={10}>
-              <Stack
-                direction={{ base: 'column', sm: 'row' }}
-                align={'start'}
-                justify={'space-between'}>
-                <Checkbox>Remember me</Checkbox>
-                <Text color={'blue.400'}>Forgot password?</Text>
-              </Stack>
-              <Button
-                bg={'blue.400'}
-                color={'white'}
-                _hover={{
-                  bg: 'blue.500',
-                }}>
-                Sign in
-              </Button>
-            </Stack>
-          </Stack>
-        </Box>
-      </Stack>
-    </Flex>
-  )
-}
+      position={'absolute'}
+      top={'50%'}
+      left={'50%'}
+      transform={'translate(-50%, -50%)'}
+    >
+      {/* Your login content goes here */}
+    </Stack>
+  );
+};
+
+export default ChakraLogin;
