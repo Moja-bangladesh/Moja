@@ -7,7 +7,6 @@ const ChakraLogin = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    // Delay the fade-in effect by 1 second (adjust as needed)
     const timer = setTimeout(() => {
       setFadeIn(true);
     }, 1000);
@@ -17,7 +16,7 @@ const ChakraLogin = () => {
 
   return (
     <Stack
-      className={`fade-in ${fadeIn ? 'fade-in-active' : ''}`}
+      className={`fade-in ${fadeIn ? 'fade-in-active stack' : ''}`}
       spacing={6}
       p={8}
       maxW={'lg'}
@@ -36,11 +35,11 @@ const ChakraLogin = () => {
       <Stack direction="row" spacing={4} width="100%">
         <InputGroup flex={1}>
           <InputLeftElement pointerEvents="none" children={<FaUserAlt color="gray.300" />} />
-          <Input type="text" placeholder="Username" size="lg" />
+          <Input type="text" placeholder="First Name" size="lg" />
         </InputGroup>
         <InputGroup flex={1}>
           <InputLeftElement pointerEvents="none" children={<FaLock color="gray.300" />} />
-          <Input type="password" placeholder="Password" size="lg" />
+          <Input type="text" placeholder="Last Name" size="lg" />
         </InputGroup>
       </Stack>
       <Button colorScheme="teal" width="full">

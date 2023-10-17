@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { Stack } from '@chakra-ui/react'; 
 import './App.css';
-import ChakraLogin from './ChakraLogin'; // Import the ChakraLogin component
+import ChakraLogin from './ChakraLogin';
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false); 
 
   useEffect(() => {
-    // Display the welcome message after a short delay (e.g., 1 second)
     const timer = setTimeout(() => {
       setShowWelcome(true);
+      const signUpTimer = setTimeout(() => setShowSignUp(true), 1000);
+      return () => clearTimeout(signUpTimer);
     }, 1000);
 
-    // Clear the timer on component unmount
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,8 +25,11 @@ function App() {
         </div>
       )}
 
-      {/* Render ChakraLogin component */}
       {showWelcome && <ChakraLogin />}
+
+      <Stack className={`sign-up-text fade-in ${showSignUp ? 'fade-in-active' : ''}`}>
+        <p>Sign Up</p>
+      </Stack>
     </div>
   );
 }
