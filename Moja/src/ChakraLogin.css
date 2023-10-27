@@ -24,3 +24,19 @@
   border-radius: 10px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
+
+.input-group input {
+  height: 50px;
+  font-size: 16px;
+}
+
+/* ChakraLogin.css */
+.custom-input {
+  font-size: 18px; 
+  padding: 12px; 
+}
+
+.custom-icon {
+  font-size: 20px; 
+}
+

@@ -32,16 +32,23 @@ const ChakraLogin = () => {
       left={'50%'}
       transform={'translate(-50%, -50%)'}
     >
-      <Stack direction="row" spacing={4} width="100%">
-        <InputGroup flex={1}>
-          <InputLeftElement pointerEvents="none" children={<FaUserAlt color="gray.300" />} />
-          <Input type="text" placeholder="First Name" size="lg" />
+      <Stack direction="row" spacing={4} width="80%">
+        <InputGroup flex={1} className="custom-input">
+          <InputLeftElement pointerEvents="none" children={<FaUserAlt className="custom-icon" />} />
+          <Input
+            placeholder="First Name"
+            size="lg" // Make the input larger
+          />
         </InputGroup>
-        <InputGroup flex={1}>
-          <InputLeftElement pointerEvents="none" children={<FaLock color="gray.300" />} />
-          <Input type="text" placeholder="Last Name" size="lg" />
+        <InputGroup flex={1} className="custom-input">
+          <InputLeftElement pointerEvents="none" children={<FaLock className="custom-icon" />} />
+          <Input
+            placeholder="Last Name"
+            size="lg" // Make the input larger
+          />
         </InputGroup>
       </Stack>
+
       <Button colorScheme="teal" width="full">
         Login
       </Button>
